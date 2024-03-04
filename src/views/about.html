@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en" class="overflow-x-hidden w-full">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About</title>
+    </head>
+    <body class="overflow-x-hidden font-opensans">  
+
+        <!-- popup window -->
+        <div class="coveredLayer1 bg-black bg-opacity-70 fixed w-screen h-full z-40 px-4 hidden">
+            <div class="coveredLayer2 w-full h-screen relative flex justify-center items-center ">
+                <div class="relative flex flex-col items-center">
+                    <div class="-mt-8 absolute rounded-full bg-primary-2 border-[3px] border-white p-[13px] z-50">
+                        <img src="../img/icon/union.svg" alt="">
+                    </div>
+                    <div class="absolute self-end p-2 z-50">
+                        <img id="exitPop" src="../img/icon/close.svg" alt="">
+                    </div>
+                    <div class="relative max-w-[470px] border-[2px] border-primary-1 rounded-xl overflow-hidden z-[45]">
+                        <div id="window1" class="absolute top-0 left-0 w-full h-full">
+                            <div id="window2" class="w-full h-full">
+                                <img class="w-full h-full object-cover opacity-10 object-center" src="../img/home/popWind.jfif" alt="">
+                            </div>
+                        </div>
+
+                        <div class="relative flex flex-col items-center">
+                            <div class= "pt-12 pb-6 px-4 md:pb-8 md:px-8">
+                                <div class="font-bold text-title-1 text-center text-white">Đặt Lịch Hẹn Khám</div>
+                                <div class="mt-2 text-body-2 text-center text-white opacity-80">
+                                    Vui lòng gửi tin nhắn cho chúng tôi và chúng tôi sẽ
+                                    liên hệ trong thời gian sớm nhất.
+                                </div>
+            
+                                <div id="form" class="my-6">
+                                    <form class="w-full">
+                                        <div class="flex flex-col gap-4">
+                                            <div class="">
+                                                <input class="  text-txt-3 text-body-1 w-full bg-white 
+                                                border-[1px] border-border-1 rounded-lg py-2.5 px-3 focus:outline-none" type="text" placeholder="Họ tên *">
+                                            </div>
+                                            <div>
+                                                <input class=" text-txt-3 text-body-1 w-full bg-white 
+                                                border-[1px] border-border-1 rounded-lg py-2.5 px-3 focus:outline-none" type="tel" placeholder="Số điện thoại *">
+                                            </div>
+                                            <div class="grid grid-cols-2 gap-4">
+                                                <div class="relative">
+                                                    <div class="absolute twi-12-calendar text-[20px] top-[15px] right-[15px] pointer-events-none"></div>
+                                                    <input id="datePicker" class="  text-txt-3 text-body-1 w-full bg-white 
+                                                    border-[1px] border-border-1 rounded-lg py-2.5 px-3 focus:outline-none " type="text" placeholder="dd/mm/yy">
+                                                </div>
+            
+                                                <div class="relative">
+                                                    <div class="absolute twi-12-time text-[20px] top-[15px] right-[15px] pointer-events-none"></div>
+                                                    <input class="timepicker text-txt-3 text-body-1 w-full bg-white 
+                                                    border-[1px] border-border-1 rounded-lg py-2.5 px-3 focus:outline-none" type="text" placeholder="--">
+                                                </div>
+                                            </div>
+                                            <div class="">
+                                                <textarea class="  text-txt-3 text-body-1 w-full bg-white 
+                                                border-[1px] border-border-1 rounded-lg py-2.5 px-3 max-h-[87px] focus:outline-none" type="text" placeholder="Nội dung" cols="30" rows="3"></textarea>
+                                            </div>
+                                        </div>
+                                </form>
+                                </div>
+        
+                                <div id="submit">
+                                    <button class="w-full rounded-lg bg-error-400 font-semibold text-white text-button-2 py-[15px] 
+                                    hover:bg-error-500 transition-all duration-700"><a href="#">Đặt Lịch</a></button>
+                                </div>
+                                
+                                <div class="flex justify-center mt-4">
+                                    <div class=" text-body-2 text-white">
+                                        Tư vấn trực tiếp 24/7:&nbsp
+                                    </div>
+                                    <div class="  font-semibold text-body-2 text-white">
+                                        1900.6900
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <header class="sticky top-0 z-30 bg-white">
+            <div class="w-full bg-primary-1 ">
+                <div class="w-full mx-auto xl:max-w-7xl">
+                    <div class="py-[9px] px-4 md:px-6 xl:px-2 2xl:px-0 w-full  ">
+                        <div class="flex justify-between items-center">
+                            <div class = 'font-semibold text-caption-2 text-white md:text-body-2'>Liên hệ chúng tôi 0901234567</div>
+                            <div class = 'flex gap-6 md:gap-8'>
+                                <div id="scheduler" >                                        
+                                    <a class ='flex items-center' href="#">
+                                        <i class="twi-12-calendar-1 text-white text-[16px] md:text-[24px]"></i>
+                                        <h1 class="ml-2 font-semibold text-caption-2 text-white md:text-body-2">
+                                                Đặt lịch hẹn
+                                        </h1>
+                                    </a>
+                                </div>
+                                <div class ='flex items-center pr-2'>
+                                    <h1 class="font-semibold text-caption-2 text-white md:text-body-2 ">Tiếng Việt</h1>
+                                    <i class=" twi-12-chevron-right text-white rotate-90"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav class="w-full mx-auto xl:max-w-7xl"> 
+                <div class="md:px-6 w-full xl:px-0 px-4">
+                    <div class="w-full flex items-center py-4 justify-between">
+                        <div>
+                            <a href="./index.html"><img src ='../img/header-footer/Logo.png'></a>
+                        </div>
+                        <div id="menu-button" class= "xl:invisible ">
+                            <i class="twi-12-menu text-header-icon" ></i>
+                        </div> 
+                        <ul class = 'hidden gap-20 xl:flex'>
+                            <li class=" text-body-1 text-txt-2 hover:text-primary-1"><a href ='./index.html'>Trang chủ</a></li>
+                            <li class=" font-semibold text-body-1 text-primary-1 hover:text-primary-1"><a href ='./about.html'>Giới thiệu</a></li>
+                            <li class=" text-body-1 text-txt-2 hover:text-primary-1"><a href ='./services.html'>Dịch vụ</a></li>
+                            <li class="text-body-1 text-txt-2 hover:text-primary-1"><a href ='./price.html'>Bảng giá</a></li>
+                            <li class=" text-body-1 text-txt-2 hover:text-primary-1"><a href ='./recommend.html'>Tin tức</a></li>
+                            <li class=" text-body-1 text-txt-2 hover:text-primary-1"><a href ='./contact.html'>Liên hệ</a></li>
+                        </ul>
+                    </div>
+                </div>
+        
+            </nav>
+            <!-- Menu Drop Down -->
+            <div class="menu-drop-down hidden">
+                <div class="flex flex-col h-screen">
+                    <a href="../index.html"><div class="hover:text-primary-1 p-4  border-b border-border-1 text-body-1 text-txt-1 font-semibold "> Trang chủ</div></a>
+                    <a href="./about.html"><div class="bg-primary-1 text-white p-4  border-b border-border-1 text-body-1 font-semibold"> Giới thiệu</div></a>
+                    <a href="./services.html"> <div class="hover:text-primary-1 p-4  border-b border-border-1 text-body-1 text-txt-1 font-semibold"> Dịch vụ</div></a>
+                    <a href="./price.html"><div class="hover:text-primary-1 p-4  border-b border-border-1 text-body-1 text-txt-1 font-semibold"> Bảng giá </div></a>
+                    <a href="./recommend.html"><div class="hover:text-primary-1 p-4  border-b border-border-1 text-body-1 text-txt-1 font-semibold">  Tin tức</div></a>
+                    <a href="./contact.html"><div class="hover:text-primary-1 p-4  border-b border-border-1 text-body-1 text-txt-1 font-semibold">Liên hệ</div></a> 
+                </div>
+            </div>
+        </header>
+        
+        <main>
+            <!-- banner -->
+            <section>
+                <div class="w-full px-0">
+                    <div  class="w-full bg-cover bg-center bg-no-repeat bg-banner-about">
+                        <div class="w-full mx-auto xl:max-w-7xl ">
+                            <div class="animated fade-in-bottom-up flex flex-col justify-center items-center gap-[30px] xl:gap-3.5 
+                                py-[37%] md:py-[15%] xl:py-[11.5%]">
+                                <div class="xl:text-heading-2 xl:font-semibold md:text-heading-1 md:font-bold font-semibold text-white text-heading-3">Giới thiệu</div>
+                                <div class="flex flex-row gap-4">
+                                    <div class="xl:text-body-1 md:text-title-1 md:text-info-300 font-semibold text-info-400 text-body-2"><a href="./index.html">Trang chủ</a></div>
+                                    <div class="xl:text-body-1 md:text-about-banner-/ text-border-1 text-body-2">/</div>
+                                    <div class="xl:text-body-1 md:text-title-1  text-white text-body-2">Giới thiệu</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- sứ mệnh -->
+            <section>
+                <div class="w-full mx-auto xl:max-w-7xl">
+                    <div class="md:px-6 w-full xl:px-0 xl:py-32 py-16 px-4">
+                        <div class="xl:gap-20 md:gap-12 md:flex-row flex flex-col gap-4">
+                            <div class="animated fade-in-left w-full xl:max-w-[713px] md:max-w-[369px] md:order-last">
+                                <div class="rounded-lg relative pt-[67%] w-full">
+                                    <img  class="absolute top-0 left-0 w-full h-auto" src="../img/about/1-about.png" alt="">
+                                </div>
+                            </div>
+
+
+                            <div class="animated fade-in-right xl:basis-[38%] md:basis-1/2 flex flex-col justify-center gap-3 xl:gap-6  w-full">
+                                <div class="xl:text-about-heading-1 font-semibold text-primary-1 text-title-1">
+                                    Sứ mệnh của nha khoan Dencare                                
+                                </div>
+                                <div class="xl:text-body-1  text-caption-1 text-txt-2">
+                                    Sứ mệnh của chúng tôi là khắc phục toàn bộ các khuyết điểm răng miệng, cho bạn hàm răng trắng sáng, đem lại nụ cười tự tin và tỏa sáng. Với hàng chục năm hình thành và phát triển, chúng tôi tin chắc rằng sẽ đem đến cho bạn những trải nghiệm nha khoa tuyệt vời nhất.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- bảng giá -->
+            <section>
+                <div class="w-full mx-auto xl:max-w-7xl">
+                    <div class="md:px-6 w-full xl:px-0 px-4">
+                        <div class="animated fade-in-bottom-up md:grid-cols-3 md:gap-0 grid grid-cols-1 gap-6">
+                            <div class="xl:flex-row flex flex-col gap-6 items-center">
+                                <div class="flex bg-cover bg-center bg-no-repeat xl:w-[105px] xl:h-[105px]">
+                                    <img src="../img/about/icon-about-1.png" alt="">
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <div class="xl:text-about-1  font-semibold text-center text-primary-1 text-title-1"><span data-count="1500000" class="counter"></span>đ</div>
+                                    <div class="xl:text-title-2  font-semibold text-center text-txt-1 text-caption-1">Cấy ghép Implant</div>
+                                </div>
+                            </div>
+
+                            <div class="xl:flex-row flex flex-col gap-6 items-center">
+                                <div class="flex bg-cover bg-center bg-no-repeat xl:w-[105px] xl:h-[105px]">
+                                    <img src="../img/about/icon-about-2.png" alt="">
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <div class="xl:text-about-1  font-semibold text-center text-primary-1 text-title-1"><span data-count="3200000" class="counter"></span> đ</div>
+                                    <div class="xl:text-title-2  font-semibold text-center text-txt-1 text-caption-1">Làm trắng răng</div>
+                                </div>
+                            </div>
+
+                            <div class="xl:flex-row flex flex-col gap-6 items-center">
+                                <div class="flex bg-cover bg-center bg-no-repeat xl:w-[105px] xl:h-[105px]">
+                                    <img src="../img/about/icon-about-3.png" alt="">
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <div class="xl:text-about-1  font-semibold text-center text-primary-1 text-title-1"><span data-count="5300000" class="counter"></span> đ</div>
+                                    <div class="xl:text-title-2  font-semibold text-center text-txt-1 text-caption-1">Niềng răng</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- lý do -->
+            <section>
+                <div class="w-full mx-auto xl:max-w-7xl">
+                    <div class="md:px-6 w-full xl:px-0 xl:py-32 py-16 px-4">
+                        <div class="xl:grid-cols-2 xl:gap-12 grid grid-cols-1 gap-10">
+                            <div class="grid grid-cols-1 gap-10">
+                                <div class="flex flex-col xl:pt-[73px] ">
+                                    <div class="flex flex-col gap-3 xl:pr-[75px]">
+                                        <div class="animated fade-in-bottom-up animation-delay-200 xl:text-heading-2  font-semibold text-primary-1 text-title-1">
+                                            Lý do nên chọn Dencare
+                                        </div>
+                                        <div class="animated fade-in-bottom-up animation-delay-200 xl:text-body-1  text-txt-2 text-caption-1">
+                                            Chúng tôi chứng minh cho bạn thấy năng lực, hiệu quả, sự chuyên nghiệp của nha khoa Dencare bằng những con số "biết nói"
+                                        </div>
+                                    </div>
+
+                                    <div class="animated fade-in-bottom-up animation-delay-[600ms] flex flex-col gap-9 mt-4">
+                                        <div class="flex gap-[46px] md:gap-24"> 
+                                            <div class=" flex flex-col gap-1 max-w-[167px] md:max-w-none xl:max-w-[192px] md:w-full">
+                                                <div data-count="400" class=" counter font-bold text-txt-2 text-heading-2">
+                                                </div>
+                                                <div class=" text-txt-2 text-body-1">
+                                                    Nha sĩ và phụ tá nhiều<br class="md:hidden xl:block"> kinh nghiệm
+                                                </div>
+                                            </div>
+
+                                            
+                                            <div class=" md:hidden flex flex-col gap-1 ">
+                                                <div data-count="3" class="counter font-bold text-txt-2 text-heading-2">
+                                                
+                                                </div>
+                                                <div class=" text-txt-2 text-body-1">
+                                                    Chi nhánh phòng
+                                                </div>
+                                            </div>
+    
+                                            <div class="hidden md:flex flex-col gap-1 md:w-full">
+                                                <div data-count="50" class="counter font-bold text-txt-2 text-heading-2">
+                                                </div>
+                                                <div class=" text-txt-2 text-body-1">
+                                                    Chi nhánh cả nước
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex gap-[46px] md:gap-24">
+                                            <div class=" flex flex-col gap-1 w-full max-w-[167px] md:max-w-none xl:max-w-[192px] md:w-full">
+                                                <div class="font-bold text-txt-2 text-heading-2">
+                                                    <span data-count="5" class="counter"></span>+
+                                                </div>
+                                                <div class=" text-txt-2 text-body-1">
+                                                    10 năm hoạt động
+                                                </div>
+                                            </div>
+                                            
+                                            <div class=" flex flex-col gap-1 md:w-full">
+                                                <div class="font-bold text-txt-2 text-heading-2  ">
+                                                    <span data-count="500000" class="counter"></span>
+                                                </div>
+                                                <div class=" text-txt-2 text-body-1">
+                                                    khách hàng trải nghiệm và đánh giá 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex w-full md:place-content-start">
+                                        <button class="md:mt-9 mt-[5px] rounded-lg
+                                        bg-primary-1 
+                                        py-3.5 px-[34px]
+                                        hover:bg-primary-2 
+                                        focus:ring-primary-1/20 
+                                        focus:ring-4
+                                        transition-all duration-700
+                                        ">
+                                        <a class="font-semibold text-button-2 text-center text-white " href="#">Đăng ký tư vấn</a></button>
+                                    </div>
+                                </div>
+    
+                            </div>
+                            <div class="animated fade-in-bottom-up animation-delay-[200ms] md:gap-x-12 md:gap-y-[74px] md:grid-cols-2 grid grid-cols-1 gap-10">
+                                <div class="flex flex-col gap-6 py-8 px-6 rounded-2xl shadow-4">
+                                    <div class="xl:text-icon-about-2 twi-12-advise text-icon-about-1 text-primary-1">
+                                    </div>
+                                    <div class="flex flex-col gap-3">
+                                        <div class=" font-semibold text-txt-1 text-title-2">Nhận tư vấn miễn phí</div>
+                                        <div class="max-h-[82px] text-txt-2 text-body-1">
+                                            Tư vấn online miễn phí cùng các nha sĩ, bác sĩ nhiều kinh nghiệm <br>&nbsp
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="animated fade-in-bottom-up animation-delay-[400ms] md:order-3 flex flex-col gap-6 py-8 px-6 rounded-2xl shadow-4">
+                                    <div class="xl:text-icon-about-2 twi-12-doctor text-icon-about-1 text-primary-1">
+                                    </div>
+                                    <div class="flex flex-col gap-3">
+                                        <div class=" font-semibold text-txt-1 text-title-2">Bác sĩ có trình độ</div>
+                                        <div class="max-h-[82px] text-txt-2 text-body-1">Nha sĩ, bác sĩ có nhiều năm kinh nghiệm, chuyên nghiệp và "mát tay".<br>&nbsp</div>
+                                    </div>
+                                </div>
+    
+                                <div class="animated fade-in-bottom-up animation-delay-[600ms] md:row-span-2 md:self-center flex flex-col gap-6 py-8 px-6 rounded-2xl shadow-4">
+                                    <div class="xl:text-icon-about-2 twi-12-service text-icon-about-1 text-primary-1">
+                                    </div>
+                                    <div class="flex flex-col gap-3">
+                                        <div class=" font-semibold text-txt-1 text-title-2">Quy trình tinh gọn</div>
+                                        <div class="max-h-[82px] text-txt-2 text-body-1">Quy trình thăm khám, điều trị nhanh gọn, không mất nhiều thời gian chờ đợi và điều trị.<br>&nbsp</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <!-- đội ngũ -->
+            <section>
+                <div class="w-full mx-auto xl:max-w-7xl">
+                    <div class="md:px-[110px] w-full xl:px-0 px-4 py-16 xl:py-32">
+                        <div class="xl:text-heading-2 mb-11 text-primary-1 text-title-1 text-justify font-semibold">Đội ngũ nha khoa của chúng tôi</div>
+                        <div class="grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-[46px] xl:grid-cols-4 xl:gap-12">
+                            <!-- Fade in Bottom Up -->
+                            <div class=" animated fade-in-bottom-up animation-delay-200 rounded-b-xl shadow-2">
+                                <div class="relative pt-[67%]">
+                                    <img class="absolute top-0 left-0 w-full h-auto" src="../img/home/doctor1.png" alt="">
+                                </div>
+                                <div class="p-4">
+                                    <div class=" font-semibold text-primary-1 text-body-1">Dr. Nguyễn Thị Mỹ Loan</div>
+                                    <div class=" text-caption-1 text-txt-2">Nha sĩ tổng quát</div>
+                                </div>
+                            </div>
+                            
+                            <div class=" animated fade-in-bottom-up animation-delay-[400ms]  rounded-b-xl shadow-2">
+                                <div class="relative pt-[67%]">
+                                    <img class="absolute top-0 left-0 w-full h-auto" src="../img/home/doctor2.png" alt="">
+                                </div>
+                                <div class="p-4">
+                                    <div class=" font-semibold text-primary-1 text-body-1">Dr. Cao Đặng Quỳnh Như</div>
+                                    <div class=" text-caption-1 text-txt-2">Nha sĩ tổng quát</div>
+                                </div>
+                            </div>
+
+                            <div  class=" animated fade-in-bottom-up animation-delay-[600ms] rounded-b-xl shadow-2">
+                                <div class="relative pt-[67%]">
+                                    <img class="absolute top-0 left-0 w-full h-auto" src="../img/home/doctor3.png" alt="">
+                                </div>
+                                <div class="p-4">
+                                    <div class=" font-semibold text-primary-1 text-body-1">Dr. Nguyễn Hoàng Long</div>
+                                    <div class=" text-caption-1 text-txt-2">Nha sĩ tổng quát</div>
+                                </div>
+                            </div>
+
+                            <div class=" animated fade-in-bottom-up animation-delay-[800ms] rounded-b-xl shadow-2">
+                                <div class="relative pt-[67%]">
+                                    <img class="absolute top-0 left-0 w-full h-auto" src="../img/home/doctor4.png" alt="">
+                                </div>
+                                <div class="p-4">
+                                    <div class=" font-semibold text-primary-1 text-body-1">Dr. Lâm Văn Long</div>
+                                    <div class=" text-caption-1 text-txt-2">Nha sĩ tổng quát</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <!-- liên hệ -->
+            <section>
+                <div class="w-full mx-auto xl:max-w-7xl">
+                    <div class="md:px-6 w-full xl:px-0 pb-16 px-4">
+                        <div class="grid grid-cols-1 gap-6 xl:grid-cols-2">
+                            <div class="animated fade-in-right hover:animate-zoom-in-up-hover bg-primary-1 rounded-lg">
+                                <div class="flex flex-row justify-between p-6">
+                                    <div class="flex flex-col">
+                                        <div class="md:text-title-2  font-semibold text-white text-caption-1">Gọi cho chúng tôi để đặt chỗ</div>
+                                        <div class="md:text-heading-3  font-semibold text-white text-body-1">+84901234567</div>
+                                    </div>
+                                    <div class="md:text-icon-about-2 twi-12-call text-white text-icon-about-3"></div>
+                                </div>
+                            </div>
+
+                            <div class="animated fade-in-left hover:animate-zoom-in-up-hover bg-primary-1 rounded-lg">
+                                <div class="flex flex-row justify-between p-6">
+                                    <div class="flex flex-col">
+                                        <div class="md:text-title-2  font-semibold text-white text-caption-1">Liên hệ qua mail</div>
+                                        <div class="md:text-heading-3 font-semibold text-white text-body-1"><a href="#" class="underline decoration-[0.5px] underline-offset-2 decoration-white">Bấm vào đây để liên hệ</a></div>
+                                    </div>
+                                    <div class="md:text-icon-about-2 twi-12-mail text-white text-icon-about-3"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="bg-footer bg-cover bg-center bg-no-repeat">
+            <div class="w-full mx-auto xl:max-w-7xl">
+                <div class="md:px-6 w-full px-4 pt-[58px] xl:px-0">
+                    <div class="grid grid-cols-1 gap-[37px] md:gap-12 md:grid-cols-2 xl:grid-cols-4">
+                        <div class="flex flex-col gap-6">
+                            <div class="w-full flex items-center">
+                                <img class="" src ='../img/header-footer/Logo.png'>
+                            </div>
+                            <div class=" text-body-2 text-txt-2">
+                                Chăm sóc răng miệng là duy trì hàm răng khỏe mạnh và làm sạch miệng
+                            </div>
+                            <ul class="grid grid-cols-1 md:gap-3 gap-3.5">
+                                <li class="flex gap-2 items-center text-body-2  text-txt-2"><div class="twi-12-location text-primary-1 text-base"></div> 345 Lê Văn Sỹ, P.13, Q.3</li>
+                                <li class="flex gap-2 items-center text-body-2  text-txt-2"><div class="twi-12-call-1 text-primary-1 text-base"></div>(+84) 901234567</li>
+                                <li class="flex gap-2 items-center text-body-2  text-txt-2"><div class="twi-12-email text-primary-1 text-base"></div>info@dencare.com</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="flex flex-col gap-3 md:pt-[19px]">
+                                <div class=" font-semibold text-txt-1 text-body-1">dencare.com</div>
+                                <hr class="w-[78px] h-1 bg-primary-1 border-0 rounded-lg "> 
+                            </div>
+                            <div class="mt-[19px]">
+                                <ul class="flex flex-col gap-1">
+                                    <li class="  text-body-2 text-txt-2">Giới thiệu</li>
+                                    <li class="  text-body-2 text-txt-2">Dịch vụ</li>
+                                    <li class="  text-body-2 text-txt-2">Quy trình</li>
+                                    <li class="  text-body-2 text-txt-2">Đội ngũ</li>
+                                    <li class="  text-body-2 text-txt-2">Đánh giá khách hàng</li>
+                                </ul>
+                            </div>
+                        </div>
+    
+                        <div>
+                            <div class="flex flex-col gap-3 xl:pt-[19px]">
+                                <div class="font-semibold text-txt-1 text-body-1">Giờ mở cửa</div>
+                                <hr class="w-[78px] h-1 bg-primary-1 border-0 rounded-lg "> 
+                            </div>
+                            <div class="mt-[19px]">
+                                <div class="flex flex-row gap-2">
+                                    <div class="flex flex-col gap-2">
+                                        <div class="text-body-2 text-txt-2">Thứ 2 - Thứ 6 </div>
+                                        <div class="text-body-2 text-txt-2">Thứ 7 </div>
+                                    </div>
+                                    <div class="flex flex-col gap-2">
+                                        <div class="text-body-2 text-primary-1">08:00 - 22:00</div>
+                                        <div class="text-body-2 text-primary-1">08:00 - 18:00</div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        </div>
+                        <div class="md:max-w-[284px] md:max-h-[190px] xl:mt-[19px] aspect-[53%] w-full flex flex-col justify-between gap-[69px] md:gap-[76px] bg-footer-main bg-cover bg-center bg-no-repeat">
+                            <div class="w-full flex">
+                                <div class="mx-3 mt-[15px] md:mt-3 bg-white border-[1px] border-white">
+                                    <a href="#">
+                                        <img class="px-[6px] py-[13px]" src="../img/home/footer-1.png" alt="">
+                                    </a>
+                                </div>
+                                <div class="py-3 ">
+                                    <a href="#">
+                                        <div class=" font-semibold text-white text-body-1">Nha khoa Dencare
+                                            <img class="inline" src="../img/icon/tick-footer.png" alt="">
+                                        </div>
+                                    </a>
+                                    <div class=" text-white text-caption-1">2000 lượt thích</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center mb-3 mx-3">
+                                <a href="#">
+                                    <div class="items-center bg-white border-[1px] border-white rounded-sm">
+                                        <div class=" flex items-center px-2 py-1.5 gap-1">
+                                            <div><img src="../img/icon/facebook icon.png" alt=""></div>
+                                            <div class=" text-black text-caption-1">Thích Trang</div> 
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="xl:mt-[58px] md:mt-[35px] mt-[52px] py-3 text-body-1 font-semibold text-txt-3 text-center">
+                Copyright © 2022 by T-Web. All Rights Reserved
+            </div>
+    
+             <!-- fixed button -->
+             <div class="z-50 flex flex-col fixed gap-8 items-center 
+             bottom-20 right-4 md:bottom-14 md:right-6 xl:bottom-12 xl:right-12">
+                 <button id="scrollTop" class="
+                 hover:opacity-60 transition-all duration-700
+                 shadow-scrollTop
+                 hidden rounded-full p-2.5 bg-black bg-opacity-30 text-icon-about-4 "> <div class="twi-12-sort-arrow-right rotate-[-90deg] text-txt-1"> </div></button>
+                 <div class="flex flex-col gap-5">
+                     <button class="hover:opacity-50 transition-all duration-700
+                     shadow-fixedButton rounded-full p-2.5 bg-primary-1 border border-primary-1"> 
+                         <a href="#">                        
+                             <img src="../img/icon/message.svg" alt="">
+                         </a>
+                     </button>
+                     <button class="hover:opacity-50 transition-all duration-700
+                     shadow-fixedButton rounded-full p-2.5 bg-mess-1 border border-primary-1">
+                         <a href="#">
+                             <img src="../img/icon/messenger.svg" alt="">
+                         </a>
+                     </button>
+                     <button class="hover:opacity-50 transition-all duration-700
+                     shadow-fixedButton rounded-full p-2.5 bg-mess-2 border border-primary-1">
+                         <a href="#">
+                             <img src="../img/icon/zalo.png" alt="">
+                         </a>
+                     </button>
+                 </div>
+            </div>
+    
+        </footer>
+    </body>
+</html>

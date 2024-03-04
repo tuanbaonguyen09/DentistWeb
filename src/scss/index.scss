@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// @import '../fonts/lato/style.css';
+@import '../fonts/opensans/style.css';
+@import '../fonts/font-icon/style.css';
+
+.ui-timepicker-wrapper {
+    position: fixed !important;
+}
+
+input{
+    color: rgba(44, 51, 58, 1) !important;
+}
+
+#window1{
+    background-color: #1976D2;
+
+}
+#window2{
+    background : linear-gradient(180deg, rgba(25, 118, 210, 0.4) 0%, rgba(25, 118, 210, 0.2) 100%),
+    linear-gradient(180deg, rgba(0, 81, 205, 0) 0%, rgba(25, 118, 210, 0) 0.01%, rgba(25, 118, 210, 0.492) 49.48%, rgba(25, 118, 210, 0.6) 100%),
+    ;
+    background-position: center;
+    background-size: cover;
+}
+
+
+#bannerSlider .slick-track {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#userSlider .slick-track {
+    display: flex !important;
+}
+
+#pagination-Num .active {
+    background-color: #1976D2;
+    border-radius: 9999px;
+    color: white;
+}
+
+#pagination-Price .active {
+    background-color: #1976D2;
+    color: white;
+}

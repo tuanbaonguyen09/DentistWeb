@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en" class="overflow-x-hidden">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Home</title>
+    </head>
+    <body class="font-opensans"> 
+
+        <!-- popup window -->
+        <div class="coveredLayer1 bg-black bg-opacity-70 fixed w-screen h-full z-40 px-4 hidden">
+            <div class="coveredLayer2 w-full h-screen relative flex justify-center items-center ">
+                <div class="relative flex flex-col items-center">
+                    <div class="-mt-8 absolute rounded-full bg-primary-2 border-[3px] border-white p-[13px] z-50">
+                        <img src="../img/icon/union.svg" alt="">
+                    </div>
+                    <div class="absolute self-end p-2 z-50">
+                        <img id="exitPop" src="../img/icon/close.svg" alt="">
+                    </div>
+                    <div class="relative max-w-[470px] border-[2px] border-primary-1 rounded-xl overflow-hidden z-[45]">
+                        <div id="window1" class="absolute top-0 left-0 w-full h-full">
+                            <div id="window2" class="w-full h-full">
+                                <img class="w-full h-full object-cover opacity-10 object-center" src="../img/home/popWind.jfif" alt="">
+                            </div>
+                        </div>
+
+                        <div class="relative flex flex-col items-center">
+                            <div class= "pt-12 pb-6 px-4 md:pb-8 md:px-8">
+                                <div class="font-bold text-title-1 text-center text-white">Đặt Lịch Hẹn Khám</div>
+                                <div class="mt-2 text-body-2 text-center text-white opacity-80">
+                                    Vui lòng gửi tin nhắn cho chúng tôi và chúng tôi sẽ
+                                    liên hệ trong thời gian sớm nhất.
+                                </div>
+            
+                                <div id="form" class="my-6">
+                                    <form class="w-full">
+                                        <div class="flex flex-col gap-4">
+                                            <div class="">
+                                                <input class="  text-txt-3 text-body-1 w-full bg-white 
+                                                border-[1px] border-border-1 rounded-lg py-2.5 px-3 focus:outline-none" type="text" placeholder="Họ tên *">
+                                            </div>
+                                            <div>
+                                                <input class=" text-txt-3 text-body-1 w-full bg-white 
+                                                border-[1px] border-border-1 rounded-lg py-2.5 px-3 focus:outline-none" type="tel" placeholder="Số điện thoại *">
+                                            </div>
+                                            <div class="grid grid-cols-2 gap-4">
+                                                <div class="relative">
+                                                    <div class="absolute twi-12-calendar text-[20px] top-[15px] right-[15px] pointer-events-none"></div>
+                                                    <input id="datePicker" class="  text-txt-3 text-body-1 w-full bg-white 
+                                                    border-[1px] border-border-1 rounded-lg py-2.5 px-3 focus:outline-none " type="text" placeholder="dd/mm/yy">
+                                                </div>
+            
+                                                <div class="relative">
+                                                    <div class="absolute twi-12-time text-[20px] top-[15px] right-[15px] pointer-events-none"></div>
+                                                    <input class="timepicker text-txt-3 text-body-1 w-full bg-white 
+                                                    border-[1px] border-border-1 rounded-lg py-2.5 px-3 focus:outline-none" type="text" placeholder="--">
+                                                </div>
+                                            </div>
+                                            <div class="">
+                                                <textarea class="  text-txt-3 text-body-1 w-full bg-white 
+                                                border-[1px] border-border-1 rounded-lg py-2.5 px-3 max-h-[87px] focus:outline-none" type="text" placeholder="Nội dung" cols="30" rows="3"></textarea>
+                                            </div>
+                                        </div>
+                                </form>
+                                </div>
+        
+                                <div id="submit">
+                                    <button class="w-full rounded-lg bg-error-400 font-semibold text-white text-button-2 py-[15px] 
+                                    hover:bg-error-500 transition-all duration-700"><a href="#">Đặt Lịch</a></button>
+                                </div>
+                                
+                                <div class="flex justify-center mt-4">
+                                    <div class=" text-body-2 text-white">
+                                        Tư vấn trực tiếp 24/7:&nbsp
+                                    </div>
+                                    <div class="  font-semibold text-body-2 text-white">
+                                        1900.6900
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <header class="sticky top-0 z-30 bg-white w-full">
+            <div class="w-full bg-primary-1 ">
+                <div class="w-full mx-auto xl:max-w-7xl">
+                    <div class="py-[9px] px-4 md:px-6 xl:px-2 2xl:px-0 w-full  ">
+                        <div class="flex justify-between items-center">
+                            <div class = 'font-semibold text-caption-2 text-white md:text-body-2'>Liên hệ chúng tôi 0901234567</div>
+                            <div class = 'flex gap-6 md:gap-8'>
+                                <div id="scheduler" >                                        
+                                    <a class ='flex items-center' href="#">
+                                        <i class="twi-12-calendar-1 text-white text-[16px] md:text-[24px]"></i>
+                                        <h1 class="ml-2 font-semibold text-caption-2 text-white md:text-body-2">
+                                                Đặt lịch hẹn
+                                        </h1>
+                                    </a>
+                                </div>
+                                <div class ='flex items-center pr-2'>
+                                    <h1 class="font-semibold text-caption-2 text-white md:text-body-2 ">Tiếng Việt</h1>
+                                    <i class=" twi-12-chevron-right text-white rotate-90"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav class="w-full mx-auto xl:max-w-7xl"> 
+                <div class="md:px-6 w-full xl:px-0 px-4">
+                    <div class="w-full flex items-center py-4 justify-between">
+                        <div>
+                            <a href="./index.html"><img src ='../img/header-footer/Logo.png'></a>
+                        </div>
+                        <div id="menu-button" class= "xl:invisible ">
+                            <i class="twi-12-menu text-header-icon" ></i>
+                        </div> 
+                        <ul class = 'hidden gap-20 xl:flex'>
+                            <li class=" font-semibold text-body-1 text-primary-1 hover:text-primary-1"><a href ='./index.html'>Trang chủ</a></li>
+                            <li class=" text-body-1 text-txt-2 hover:text-primary-1"><a href ='./about.html'>Giới thiệu</a></li>
+                            <li class=" text-body-1 text-txt-2 hover:text-primary-1"><a href ='./services.html'>Dịch vụ</a></li>
+                            <li class=" text-body-1 text-txt-2 hover:text-primary-1"><a href ='./price.html'>Bảng giá</a></li>
+                            <li class=" text-body-1 text-txt-2 hover:text-primary-1"><a href ='./recommend.html'>Tin tức</a></li>
+                            <li class=" text-body-1 text-txt-2 hover:text-primary-1"><a href ='./contact.html'>Liên hệ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- Menu Drop Down -->
+            <div class="menu-drop-down hidden">
+                <div class="flex flex-col h-screen">
+                    <a href="../index.html"><div class=" bg-primary-1 text-white p-4  border-b border-border-1 text-body-1 font-semibold"> Trang chủ</div></a>
+                    <a href="./about.html"><div class="hover:text-primary-1 p-4  border-b border-border-1 text-body-1 text-txt-1 font-semibold"> Giới thiệu</div></a>
+                    <a href="./services.html"> <div class="hover:text-primary-1 p-4  border-b border-border-1 text-body-1 text-txt-1 font-semibold"> Dịch vụ</div></a>
+                    <a href="./price.html"><div class="hover:text-primary-1 p-4  border-b border-border-1 text-body-1 text-txt-1 font-semibold"> Bảng giá </div></a>
+                    <a href="./recommend.html"><div class="hover:text-primary-1 p-4  border-b border-border-1 text-body-1 text-txt-1 font-semibold">  Tin tức</div></a>
+                    <a href="./contact.html"><div class="hover:text-primary-1 p-4  border-b border-border-1 text-body-1 text-txt-1 font-semibold">Liên hệ</div></a> 
+                </div>
+            </div>
+        </header>
+        
+        <main>
+            <!-- banner -->
+            <section>
+                <div class="w-full px-0 relative ">
+                    <button id="bannerSlider-prev" type="button" class="
+                    xl:visible invisible
+                    absolute top-[44%] left-[6%] z-20 text-[32px] 
+                    bg-white rounded-full p-[19px] twi-12-chevron-left text-primary-1 
+                    shadow-arrow "></button>
+
+                    <!-- Fade Up -->
+                    <div  id="bannerSlider" class="">
+                        <div class="w-full bg-cover md:bg-center bg-no-repeat bg-left bg-banner">
+                            <div class="w-full mx-auto xl:max-w-7xl md:px-6 xl:px-0 px-4">
+                                <div class="animated fade-in-bottom-up
+                                pt-[22%] pb-[15%]
+                                md:py-[7%]
+                                xl:py-[17%] 
+                                flex flex-col xl:gap-6 md:gap-3 gap-4 items-center justify-center
+                                md:max-w-[40%]              
+                                ">
+                                    <div class="xl:text-heading-2 md:text-left md:text-title-1  text-title-2 text-center font-bold text-primary-1 uppercase">
+                                        <a href="#">
+                                            Thẩm mỹ và điều trị nha khoa chuyên sâu
+                                        </a>
+                                    </div>
+                                    <div class="xl:text-body-1 md:float-left md:text-left text-caption-1 text-center text-txt-2">
+                                        Mang đến cho bạn nụ cười tự tin với hàm răng trắng sáng, khắc phục các khuyết điểm với công nghệ nha khoa hiện đại nhất.
+                                    </div>
+                                    <div class="flex md:justify-start w-full justify-center ">
+                                        <button class="xl:mt-6 md:mt-3 rounded-lg
+                                        bg-primary-1 
+                                        py-3.5 px-6 xl:py-[18px] xl:px-[34px]
+                                        hover:bg-primary-2 
+                                        focus:ring-primary-1/20 
+                                        focus:ring-4
+                                        transition-all duration-500
+                                        ">
+                                        <a class="font-semibold text-button-2 text-center text-white " href="#">Tìm hiểu thêm</a></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-full bg-cover md:bg-center bg-no-repeat bg-left aspect-[38.28%] bg-banner">
+                            <div class="w-full mx-auto xl:max-w-7xl md:px-6 xl:px-0 px-4">
+                                <div class="
+                                pt-[22%] pb-[15%]
+                                md:py-[7%]
+                                xl:py-[17%] 
+                                flex flex-col xl:gap-6 md:gap-3 gap-4 items-center justify-center
+                                md:max-w-[40%]              
+                                ">
+                                    <div class="xl:text-heading-2 md:text-left md:text-title-1  text-title-2 text-center font-bold text-primary-1 uppercase">
+                                        <a href="#">
+                                            Thẩm mỹ và điều trị nha khoa chuyên sâu
+                                        </a>
+                                    </div>
+                                    <div class="xl:text-body-1 md:float-left md:text-left text-caption-1 text-center text-txt-2">
+                                        Mang đến cho bạn nụ cười tự tin với hàm răng trắng sáng, khắc phục các khuyết điểm với công nghệ nha khoa hiện đại nhất.
+                                    </div>
+                                    <div class="flex md:justify-start w-full justify-center ">
+                                        <button class="xl:mt-6 md:mt-3 rounded-lg
+                                        bg-primary-1 
+                                        py-3.5 px-6 xl:py-[18px] xl:px-[34px]
+                                        hover:bg-primary-2 
+                                        focus:ring-primary-1/20 
+                                        focus:ring-4
+                                        transition-all duration-500
+                                        ">
+                                        <a class="font-semibold text-button-2 text-center text-white " href="#">Tìm hiểu thêm</a></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-full bg-cover md:bg-center bg-no-repeat bg-left aspect-[38.28%] bg-banner">
+                            <div class="w-full mx-auto xl:max-w-7xl md:px-6 xl:px-0 px-4">
+                                <div class="
+                                pt-[22%] pb-[15%]
+                                md:py-[7%]
+                                xl:py-[17%] 
+                                flex flex-col xl:gap-6 md:gap-3 gap-4 items-center justify-center
+                                md:max-w-[40%]              
+                                ">
+                                    <div class="xl:text-heading-2 md:text-left md:text-title-1  text-title-2 text-center font-bold text-primary-1 uppercase">
+                                        <a href="#">
+                                            Thẩm mỹ và điều trị nha khoa chuyên sâu
+                                        </a>
+                                    </div>
+                                    <div class="xl:text-body-1 md:float-left md:text-left text-caption-1 text-center text-txt-2">
+                                        Mang đến cho bạn nụ cười tự tin với hàm răng trắng sáng, khắc phục các khuyết điểm với công nghệ nha khoa hiện đại nhất.
+                                    </div>
+                                    <div class="flex md:justify-start w-full justify-center ">
+                                        <button class="xl:mt-6 md:mt-3 rounded-lg
+                                        bg-primary-1 
+                                        py-3.5 px-6 xl:py-[18px] xl:px-[34px]
+                                        hover:bg-primary-2 
+                                        focus:ring-primary-1/20 
+                                        focus:ring-4
+                                        transition-all duration-500
+                                        ">
+                                        <a class="font-semibold text-button-2 text-center text-white " href="#">Tìm hiểu thêm</a></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="bannerSlider-next" type="button" class="
+                    xl:visible invisible
+                    absolute z-20 text-[32px] bg-white rounded-full p-[19px] twi-12-chevron-right text-primary-1 
+                    shadow-arrow
+                    top-[44%] right-[6%]
+                    ">
+                    </button>
+                </div>
+            </section>
+            <!--sub_banner -->
+            <section>
+                <div class="w-full mx-auto xl:max-w-7xl xl:mt-[-81px] md:mt-[-32px] ">
+                    <div class="md:px-6 w-full xl:px-0 relative">
+                        <!-- Zoom in Up -->
+                        <div class="animated zoom-in-up rounded-md shadow-1 w-full bg-white">
+
+                            <div class="py-8 px-6 w-full flex flex-col md:justify-center gap-6 md:flex-row ">
+                                <div class="xl:min-w-[325px] flex flex-col gap-6 font-semibold text-txt-1 text-title-1 text-center xl:flex-row">
+                                    <div><img class="mx-auto"src="../img/icon/icon1.png"></div>
+                                    <div class="xl:flex xl:items-center text-center">Tư vấn miễn phí</div>
+                                </div>
+                                <div class="xl:min-w-[325px] flex flex-col gap-6 font-semibold text-txt-1 text-title-1 text-center xl:flex-row">
+                                    <div><img class="mx-auto" src="../img/icon/icon2.png"></div>
+                                    <div class="xl:flex xl:items-center text-center">Bác sĩ có trình độ</div>
+                                </div>
+                                <div class="xl:min-w-[325px] flex flex-col gap-6 font-semibold text-txt-1 text-title-1 text-center xl:flex-row ">
+                                    <div><img class="mx-auto" src="../img/icon/icon3.png"></div>
+                                    <div class="xl:flex xl:items-center text-center">Dịch vụ 24/7</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+            <!-- đôi nét -->
+            <section>   
+                <div class="w-full mx-auto xl:max-w-7xl">
+                    <div class="md:px-6 w-full xl:px-0 py-16 xl:py-32 px-4">
+                        <div  class="flex flex-col md:flex-row gap-6 md:gap-12 xl:gap-20">
+                            <!-- Fade in Right -->
+                            <div class="animated fade-in-right w-full xl:max-w-[713px] md:max-w-[369px]">
+                                <div class="rounded-lg aspect-[67%] w-full">
+                                    <img  class="w-full h-auto" src="../img/home/something.png" alt="">
+                                </div>
+                            </div>
+                            <!-- Fade in Left -->
+                            <div class="animated fade-in-left md:basis-1/2
+                                    grid grid-cols-1 gap-[18px] xl:gap-9 
+                                    md:py-3 xl:py-6" 
+                                   >
+                                <div class="flex flex-col gap-3 xl:gap-4">
+                                    <div class="xl:hidden  font-semibold text-title-1 text-primary-1">Đôi nét về nha khoa Dencare</div>
+                                    <div class="hidden xl:flex font-semibold text-heading-2 text-primary-1">Chúng tôi là nha khoa thân thiện với mọi người</div>
+                                    <div class="xl:hidden  text-caption-1 text-txt-2">
+                                        Dencare là hệ thống nha khoa với gần 10 năm kinh nghiệm trong 
+                                        thẩm mỹ và điều trị nha khoa chuyên sâu. 400 nha sĩ, phụ tá toàn hệ thống 
+                                        cùng 50 chi nhánh trên toàn quốc. Chúng tôi đã và đang cố gắng không ngừng 
+                                        để cải thiện và nâng cao chất lượng dịch vụ, mang đến cho bạn những trải 
+                                        nghiệm tuyệt vời nhất khi đến với Dencare.
+                                    </div>
+                                    <div class="xl:flex hidden text-body-1 text-txt-2">
+                                            Chúng tôi tin rằng việc đến gặp nha sĩ không phải là một trải nghiệm đáng sợ hoặc căng thẳng! 
+                                            Chúng tôi cung cấp các dịch vụ trải nghiệm thư giãn thoải mái  cho tất .
+                                    </div>
+                                </div>
+                                <div class="flex items-end ">
+                                    <button class="xl:mt-6 rounded-lg
+                                    bg-primary-1 
+                                    py-3.5 px-[34px]
+                                    hover:bg-primary-2 
+                                    focus:ring-primary-1/20 
+                                    focus:ring-4
+                                    transition-all duration-700
+                                    ">
+                                    <a class="font-semibold text-button-2 text-center text-white " href="#">Tìm hiểu thêm</a></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- dịch vụ -->
+            <section>
+                <div class="w-full mx-auto xl:max-w-7xl">
+                    <div  class="md:px-6 w-full xl:px-0 px-4 pb-16">
+                        <div  class="md:hidden font-semibold text-title-1 text-primary-1" >Các dịch vụ tại Dencare</div>
+                        <div class="md:flex xl:hidden hidden font-semibold text-title-1 text-primary-1">Các dịch vụ chúng tôi có thể mang đến cho bạn</div>
+
+                        <div class="w-full my-11 md:mb-10 grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-x-12 md:gap-y-10 xl:grid-cols-4">
+                            <!-- Fade Right -->
+                            <div class="animated fade-in-right font-semibold text-title-1 text-primary-1 hidden xl:flex xl:col-span-2 xl:items-center xl:text-heading-2">Các dịch vụ tại Dencare</div>
+                            <!-- Card Fade up -->
+                            <div  class="animated fade-in-bottom-up w-full rounded-2xl shadow-2">
+                                <div class="relative aspect-[67%] w-full ">
+                                    <button class="absolute z-20 left-4 bottom-4 rounded-3xl bg-primary-3 "><div class="py-2 px-[19px] text-white">Dịch vụ</div></button>
+                                    <img class="rounded-t-2xl w-full h-full" src="../img/home/service1.png" alt="">
+                                </div>
+                                <div class="m-4">
+                                    <div class="font-semibold text-title-2 xl:text-service-title text-txt-1">Trồng răng Implants</div>
+                                    <div class="max-w-[252px] mt-4 text-body-2 text-txt-2">
+                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+                                        sed Lorem ipsum dolor sit amet, consetetur...
+                                    </div>
+                                    <div class="group mt-8">
+                                        <div class="flex items-center gap-3 font-semibold text-button-link-1 text-primary-1"><a href="../topic.html">Đọc tiếp</a> <a class="group-hover:animate-slide-right"href="../topic.html"><i class=" twi-12-toward text-primary-1"></i></a></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div  class="animated fade-in-bottom-up w-full rounded-2xl shadow-2">
+                                <div class="relative aspect-[67%] w-full ">
+                                    <button class="absolute z-20 left-4 bottom-4 rounded-3xl bg-primary-3 "><div class="py-2 px-[19px]   text-white">Dịch vụ</div></button>
+                                    <img class="rounded-t-2xl w-full h-full" src="../img/home/service1.png" alt="">
+                                </div>
+                                <div class="m-4">
+                                    <div class="font-semibold text-title-2 xl:text-service-title text-txt-1">Nhổ răng thường/răng khôn</div>
+                                    <div class="max-w-[252px] mt-4 text-body-2 text-txt-2">
+                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+                                        sed Lorem ipsum dolor sit amet, consetetur...
+                                    </div>
+                                    <div class="group mt-8">
+                                        <div class="flex items-center gap-3 font-semibold text-button-link-1 text-primary-1"><a href="../topic.html">Đọc tiếp</a> <a class="group-hover:animate-slide-right"href="../topic.html"><i class=" twi-12-toward text-primary-1"></i></a></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div  class="animated fade-in-bottom-up w-full rounded-2xl shadow-2">
+                                <div class="relative aspect-[67%] w-full ">
+                                    <button class="absolute z-20 left-4 bottom-4 rounded-3xl bg-primary-3 "><div class="py-2 px-[19px]   text-white">Dịch vụ</div></button>
+                                    <img class="rounded-t-2xl w-full h-full" src="../img/home/service1.png" alt="">
+                                </div>
+                                <div class="m-4">
+                                    <div class="font-semibold text-title-2 xl:text-service-title text-txt-1">Tẩy trắng răng</div>
+                                    <div class="max-w-[252px] mt-4 text-body-2 text-txt-2">
+                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+                                        sed Lorem ipsum dolor sit amet, consetetur...
+                                    </div>
+                                    <div class="group mt-8">
+                                        <div class="flex items-center gap-3 font-semibold text-button-link-1 text-primary-1"><a href="../topic.html">Đọc tiếp</a> <a class="group-hover:animate-slide-right"href="../topic.html"><i class=" twi-12-toward text-primary-1"></i></a></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div  class="animated fade-in-bottom-up w-full rounded-2xl shadow-2">
+                                <div class="relative aspect-[67%] w-full ">
+                                    <button class="absolute z-20 left-4 bottom-4 rounded-3xl bg-primary-3 "><div class="py-2 px-[19px]   text-white">Dịch vụ</div></button>
+                                    <img class="rounded-t-2xl w-full h-full" src="../img/home/service1.png" alt="">
+                                </div>
+                                <div class="m-4">
+                                    <div class="font-semibold text-title-2 xl:text-service-title text-txt-1">Cấy ghép Implants</div>
+                                    <div class="max-w-[252px] mt-4 text-body-2 text-txt-2">
+                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+                                        sed Lorem ipsum dolor sit amet, consetetur...
+                                    </div>
+                                    <div class="group mt-8">
+                                        <div class="flex items-center gap-3 font-semibold text-button-link-1 text-primary-1"><a href="../topic.html">Đọc tiếp</a> <a class="group-hover:animate-slide-right"href="../topic.html"><i class=" twi-12-toward text-primary-1"></i></a></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div  class="animated fade-in-bottom-up w-full rounded-2xl shadow-2">
+                                <div class="relative aspect-[67%] w-full ">
+                                    <button class="absolute z-20 left-4 bottom-4 rounded-3xl bg-primary-3 "><div class="py-2 px-[19px]   text-white">Dịch vụ</div></button>
+                                    <img class="rounded-t-2xl w-full h-full" src="../img/home/service1.png" alt="">
+                                </div>
+                                <div class="m-4">
+                                    <div class="font-semibold text-title-2 xl:text-service-title text-txt-1">Lấy tủy</div>
+                                    <div class="max-w-[252px] mt-4 text-body-2 text-txt-2">
+                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+                                        sed Lorem ipsum dolor sit amet, consetetur...
+                                    </div>
+                                    <div class="group mt-8">
+                                        <div class="flex items-center gap-3 font-semibold text-button-link-1 text-primary-1"><a href="../topic.html">Đọc tiếp</a> <a class="group-hover:animate-slide-right"href="../topic.html"><i class=" twi-12-toward text-primary-1"></i></a></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div  class="animated fade-in-bottom-up w-full rounded-2xl shadow-2">
+                                <div class="relative aspect-[67%] w-full ">
+                                    <button class="absolute z-20 left-4 bottom-4 rounded-3xl bg-primary-3 "><div class="py-2 px-[19px]   text-white">Dịch vụ</div></button>
+                                    <img class="rounded-t-2xl w-full h-full" src="../img/home/service1.png" alt="">
+                                </div>
+                                <div class="m-4">
+                                    <div class="font-semibold text-title-2 xl:text-service-title text-txt-1">Đính kim cương</div>
+                                    <div class="max-w-[252px] mt-4 text-body-2 text-txt-2">
+                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+                                        sed Lorem ipsum dolor sit amet, consetetur...
+                                    </div>
+                                    <div class="group mt-8">
+                                        <div class="flex items-center gap-3 font-semibold text-button-link-1 text-primary-1"><a href="../topic.html">Đọc tiếp</a> <a class="group-hover:animate-slide-right"href="../topic.html"><i class=" twi-12-toward text-primary-1"></i></a></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+  
+                        </div>
+                        <div class="flex justify-center">
+                            <button class="rounded-lg border border-primary-1 
+                            text-button-2 text-center 
+                            font-semibold  text-primary-1 
+                            py-[14px] px-[50px]
+                            hover:text-white
+                            hover:bg-primary-1
+                            transition-all duration-700
+                            "><a href="#">Xem thêm</a> </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- đội ngũ -->
+            <section>
+                <div class="w-full mx-auto xl:max-w-7xl">
+                    <div class="md:px-[110px] w-full xl:px-0 px-4 py-16 xl:py-32">
+                        <div class="xl:text-heading-2 mb-11 text-primary-1 text-title-1 text-justify font-semibold">Đội ngũ nha khoa của chúng tôi</div>
+                        <div class="grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-[46px] xl:grid-cols-4 xl:gap-12">
+                            <!-- Fade in Bottom Up -->
+                            <div class=" animated fade-in-bottom-up animation-delay-200 rounded-b-xl shadow-2">
+                                <div class="relative pt-[67%]">
+                                    <img class="absolute top-0 left-0 w-full h-auto" src="../img/home/doctor1.png" alt="">
+                                </div>
+                                <div class="p-4">
+                                    <div class=" font-semibold text-primary-1 text-body-1">Dr. Nguyễn Thị Mỹ Loan</div>
+                                    <div class=" text-caption-1 text-txt-2">Nha sĩ tổng quát</div>
+                                </div>
+                            </div>
+                            
+                            <div class=" animated fade-in-bottom-up animation-delay-[400ms]  rounded-b-xl shadow-2">
+                                <div class="relative pt-[67%]">
+                                    <img class="absolute top-0 left-0 w-full h-auto" src="../img/home/doctor2.png" alt="">
+                                </div>
+                                <div class="p-4">
+                                    <div class=" font-semibold text-primary-1 text-body-1">Dr. Cao Đặng Quỳnh Như</div>
+                                    <div class=" text-caption-1 text-txt-2">Nha sĩ tổng quát</div>
+                                </div>
+                            </div>
+
+                            <div  class=" animated fade-in-bottom-up animation-delay-[600ms] rounded-b-xl shadow-2">
+                                <div class="relative pt-[67%]">
+                                    <img class="absolute top-0 left-0 w-full h-auto" src="../img/home/doctor3.png" alt="">
+                                </div>
+                                <div class="p-4">
+                                    <div class=" font-semibold text-primary-1 text-body-1">Dr. Nguyễn Hoàng Long</div>
+                                    <div class=" text-caption-1 text-txt-2">Nha sĩ tổng quát</div>
+                                </div>
+                            </div>
+
+                            <div class=" animated fade-in-bottom-up animation-delay-[800ms] rounded-b-xl shadow-2">
+                                <div class="relative pt-[67%]">
+                                    <img class="absolute top-0 left-0 w-full h-auto" src="../img/home/doctor4.png" alt="">
+                                </div>
+                                <div class="p-4">
+                                    <div class=" font-semibold text-primary-1 text-body-1">Dr. Lâm Văn Long</div>
+                                    <div class=" text-caption-1 text-txt-2">Nha sĩ tổng quát</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <!-- điểm cộng -->
+            <section>
+                <div class="bg-primary-5 xl:px-0 xl:my-16">
+                    <div class="w-full  grid grid-cols-1 xl:grid-cols-2 ">
+                        <!-- Fade Left -->
+                        <div  class="animated fade-in-left flex xl:order-last ">
+                            <img class = "w-full object-cover object-center" src="../img/home/care.png" alt="">
+                        </div>
+                        <div  class="animated fade-in-right xl:max-w-[640px] xl:ml-auto xl:pr-[135px] xl:self-center">
+                            <div class="px-4 py-20 md:px-6 xl:px-0">
+                                <div class="xl:hidden  font-semibold text-title-1 text-txt-1">Điểm cộng của Dencare</div>
+                                <div class="xl:flex hidden  font-semibold text-heading-2 text-txt-1">Chăm sóc răng và nướu của bạn</div>
+
+                                <div class="xl:hidden  text-caption-1 text-txt-2 mt-6">Sứ mệnh của Dencare là mang đến sự tin và tỏa sáng cho bạn bằng hàm răng không còn khuyết điểm!</div>
+                                <div class="xl:flex hidden text-body-1 text-txt-2 mt-6">Các nhà nghiên cứu đã phát hiện ra rằng những người bị bệnh nướu răng có nguy cơ mắc bệnh tim mạch vành cao gần gấp đôi…</div>
+    
+                                <ul class="mt-6">
+                                    <li class="flex gap-[5px] md:gap-[11px] items-center xl:text-body-1 mb-[14px]  font-semibold text-caption-1 text-txt-2"><img src="../img/home/tick.png"> Thiết bị hiện đại, kiểm soát nhiễm trùng.</li>
+                                    <li class="flex gap-[5px] md:gap-[11px] items-center xl:text-body-1 my-[14px]  font-semibold text-caption-1 text-txt-2"><img src="../img/home/tick.png">Quy trình tinh gọn, tiết kiệm thời gian.</li>
+                                    <li class="flex gap-[5px] md:gap-[11px] items-center xl:text-body-1 my-[14px]  font-semibold text-caption-1 text-txt-2"><img src="../img/home/tick.png">Đào tạo chuyên môn, cập nhật kiến thức nha khoa định kỳ.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- tin tức -->
+            <section>
+                <div class="w-full mx-auto xl:max-w-7xl">
+                    <div class="md:px-6 w-full xl:px-0 px-4 py-16 xl:py-32">
+                        <div class="xl:text-heading-2  font-semibold text-title-1 text-primary-1">
+                            Tin tức và sự kiện mới nhất
+                        </div>
+                        <div class="flex flex-col xl:flex-row mt-11 gap-12">
+                            <div  class="animated fade-in-right w-full">
+                                <a href="../topic.html">
+                                    <div class="flex relative bg-cover bg-center bg-no-repeat justify-end items-end">
+                                        <img class = "w-full rounded-lg" src="../img/home/news.png" alt="">
+                                        <button class="absolute rounded-3xl bg-primary-3 my-4 mx-4">
+                                            <div class=" font-semibold text-white text-button-1 py-[6px] px-[17px]">Tin tức</div>
+                                        </button>
+                                    </div>
+                                </a>
+                                <div>
+                                    <div class="md:text-heading-3 mt-7 md:mt-10 font-semibold text-title-1 text-txt-1">
+                                        <a href="../topic.html">Thực phẩm tốt nhất và tệ nhất cho răng miệng của bạn</a>
+                                    </div>
+                                    <div class="md:text-body-1 line-clamp-2 xl:text-body-1 mt-3  text-caption-1 text-txt-2">
+                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet, consetetur...
+                                    </div>
+                                </div>
+                                <div class="group mt-8">
+                                    <div class="flex items-center gap-3 font-semibold text-button-link-1 text-primary-1"><a href="../topic.html">Đọc tiếp</a> <a class="group-hover:animate-slide-right" href="../topic.html"><i class="twi-12-toward text-primary-1"></i></a></div>
+                                </div>
+                            </div>
+                            <!-- Fade UP -->
+                            <div  class=" w-full flex flex-col gap-11"> 
+                                <div class="animated fade-in-bottom-up animation-delay-200 flex flex-col gap-6 md:flex-row md:gap-12">
+                                    <div class="w-full md:max-w-[173px]"> 
+                                        <div class="aspect-[67%] w-full ">
+                                            <a class="" href="#"><img class="w-full h-auto rounded-lg" src="../img/home/examples1.png" alt=""></a>
+                                        </div>
+                                    </div>
+                                    <div class="w-full">
+                                        <div class=" text-caption-1 text-info-400">
+                                            <a href="../topic.html">Tin tức</a>
+                                        </div>
+                                        <div class="md:text-title-2 mt-2  font-semibold text-title-1 text-txt-1">
+                                            <a href="../topic.html">Sử Dụng Bàn Chải Đánh Răng Bằng Điện Hay Bằng Tay Tốt hơn  </a>                                  
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="animated fade-in-bottom-up animation-delay-[400ms] flex flex-col gap-6 md:flex-row md:gap-12">
+                                    <div class="w-full md:max-w-[173px]"> 
+                                        <div class="aspect-[67%] w-full ">
+                                            <a class="" href="#"><img class="w-full h-auto rounded-lg" src="../img/home/examples2.png" alt=""></a>
+                                        </div>
+                                    </div>
+                                    <div class="w-full">
+                                        <div class=" text-caption-1 text-info-400">
+                                            <a href="../topic.html">Tin tức</a>
+                                        </div>
+                                        <div class="md:text-title-2 mt-2  font-semibold text-title-1 text-txt-1">
+                                            <a href="../topic.html">Làm thế nào để có vệ sinh răng miệng tuyệt vời với niềng răng </a>                                       </div>
+                                    </div>
+                                </div>
+
+                                <div class="animated fade-in-bottom-up animation-delay-[600ms] flex flex-col gap-6 md:flex-row md:gap-12">
+                                    <div class="w-full md:max-w-[173px]"> 
+                                        <div class="aspect-[67%] w-full ">
+                                            <a class="" href="#"><img class="w-full h-auto rounded-lg" src="../img/home/examples3.png" alt=""></a>
+                                        </div>
+                                    </div>
+                                    <div class="w-full">
+                                        <div class=" text-caption-1 text-info-400">
+                                            <a href="../topic.html">Tin tức</a>
+                                        </div>
+                                        <div class="md:text-title-2 mt-2  font-semibold text-title-1 text-txt-1">
+                                            <a href="../topic.html">Kiểm tra độ nhạy của bột giấy để chẩn đoán sức khỏe của mạch máu</a>                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="animated fade-in-bottom-up animation-delay-[800ms] flex flex-col gap-6 md:flex-row md:gap-12">
+                                    <div class="w-full md:max-w-[173px]"> 
+                                        <div class="aspect-[67%] w-full ">
+                                            <a class="" href="#"><img class="w-full h-auto rounded-lg" src="../img/home/examples4.png" alt=""></a>
+                                        </div>
+                                    </div>
+                                    <div class="w-full">
+                                        <div class=" text-caption-1 text-info-400">
+                                            <a href="../topic.html">Tin tức</a>
+                                        </div>
+                                        <div class="md:text-title-2 mt-2  font-semibold text-title-1 text-txt-1">
+                                            <a href="../topic.html">Ngăn ngừa bệnh nướu răng </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- khách hàng -->
+            <section>
+                <div class="w-full mx-auto xl:max-w-7xl ">
+                    <div class="md:px-6 w-full xl:px-0 px-4 pt-16 xl:pt-32">
+                        <div class="xl:text-heading-2 mb-11 font-semibold text-title-1 text-primary-1">
+                        Khách hàng nói gì ?    
+                        </div>
+                        <div class="w-full relative flex">
+                            <div id="userSlider" class="w-full item_slider flex">
+                                <div class="flex pb-[35px] xl:pb-16 pr-[49px] md:pr-[53px] xl:pr-[49px]">
+                                    <div class="animated fade-in-bottom-up animation-delay-200 max-w-[265px]">
+                                        <div class="relative pt-[134%] -z-10">
+                                            <img class="rounded-[20px] absolute left-0 top-0 w-full h-full object-cover" src="../img/home/user1.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class=" animated fade-in-right animation-delay-[800ms]
+                                    -mt-[147px] ml-20 xl:ml-[110px]
+                                    max-w-[284px]
+                                    py-[22px] pl-4 pr-6 
+                                    bg-white rounded-xl border-l-8 border-primary-1 shadow-3 ">
+                                        <div class="w-full border-l border-border-1">
+                                            <div class="hidden xl:flex pl-2 text-caption-1 text-txt-2">
+                                                "Thank you so much for your help. It's exactly what I've been looking for. You won't regret it." </div>
+                                            <div class="xl:hidden pl-2 text-caption-1 text-txt-2 max-h-14">
+                                                <p class="">Nhiều dịch vụ, giá cả hợp lý, nhanh gọn không đợi lâu.</p>
+                                                <br>
+                                            </div>
+                                        </div>
+                                        <div class="mt-[21px] flex justify-between ">
+                                            <div class="flex">  
+                                                <i class="twi-12-star text-warning-400"></i>
+                                                <i class="twi-12-star text-warning-400"></i>
+                                                <i class="twi-12-star text-warning-400"></i>
+                                                <i class="twi-12-star text-warning-400"></i>
+                                                <i class="twi-12-star text-warning-400"></i>
+                                            </div>
+                                            <div class="text-reviews-2 font-semibold text-txt-2">12 reviews</div>
+                                        </div>
+                                        <div class="mt-3 font-semibold text-body-2 text-primary-1">Nguyễn Thị Loan</div>
+                                    </div>
+                                </div>
+
+                                <div class="flex pb-[35px] xl:pb-16 pr-[49px] md:pr-[53px] xl:pr-[49px]">
+                                    <div class="animated fade-in-bottom-up animation-delay-[400ms] max-w-[265px]">
+                                        <div class="relative pt-[134%] -z-10">
+                                            <img class="rounded-[20px] absolute left-0 top-0 w-full h-full object-cover" src="../img/home/user2.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="animated fade-in-right animation-delay-1000
+                                    -mt-[147px] ml-20 xl:ml-[110px]
+                                    max-w-[284px] 
+                                    py-[22px] pl-4 pr-6 
+                                    bg-white rounded-xl border-l-8 border-primary-1 shadow-3 ">
+                                        <div class="w-full border-l border-border-1">
+                                            <div class="hidden xl:flex pl-2 text-caption-1 text-txt-2">
+                                                "Thank you so much for your help. It's exactly what I've been looking for. You won't regret it." </div>
+                                            <div class="xl:hidden pl-2 text-caption-1 text-txt-2 max-h-14">
+                                                <p class="">Nhiều dịch vụ, giá cả hợp lý, nhanh gọn không đợi lâu.</p>
+                                                <br>
+                                            </div>
+                                        </div>
+                                        <div class="mt-[21px] flex justify-between ">
+                                            <div class="flex">  
+                                                <i class="twi-12-star text-warning-400"></i>
+                                                <i class="twi-12-star text-warning-400"></i>
+                                                <i class="twi-12-star text-warning-400"></i>
+                                                <i class="twi-12-star text-warning-400"></i>
+                                                <i class="twi-12-star text-warning-400"></i>
+                                            </div>
+                                            <div class="text-reviews-2 font-semibold text-txt-2">12 reviews</div>
+                                        </div>
+                                        <div class="mt-3 font-semibold text-body-2 text-primary-1">Nguyễn Thị Loan</div>
+                                    </div>
+                                </div>
+
+                                <div class="flex pb-[35px] xl:pb-16 pr-[49px] md:pr-[53px] xl:pr-[49px]">
+                                    <div class="animated fade-in-bottom-up animation-delay-[600ms] max-w-[265px]">
+                                        <div class="relative pt-[134%] -z-10">
+                                            <img class="rounded-[20px] absolute left-0 top-0 w-full h-full object-cover" src="../img/home/user3.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="animated fade-in-right animation-delay-[1200ms]
+                                    -mt-[147px] ml-20 xl:ml-[110px]
+                                    max-w-[284px]
+                                    py-[22px] pl-4 pr-6 
+                                    bg-white rounded-xl border-l-8 border-primary-1 shadow-3 ">
+                                        <div class="w-full border-l border-border-1">
+                                            <div class="hidden xl:flex pl-2 text-caption-1 text-txt-2">
+                                                "Thank you so much for your help. It's exactly what I've been looking for. You won't regret it." </div>
+                                            <div class="xl:hidden pl-2 text-caption-1 text-txt-2 max-h-14">
+                                                <p class="">Nhiều dịch vụ, giá cả hợp lý, nhanh gọn không đợi lâu.</p>
+                                                <br>
+                                            </div>
+                                        </div>
+                                        <div class="mt-[21px] flex justify-between ">
+                                            <div class="flex">  
+                                                <i class="twi-12-star text-warning-400"></i>
+                                                <i class="twi-12-star text-warning-400"></i>
+                                                <i class="twi-12-star text-warning-400"></i>
+                                                <i class="twi-12-star text-warning-400"></i>
+                                                <i class="twi-12-star text-warning-400"></i>
+                                            </div>
+                                            <div class="text-reviews-2 font-semibold text-txt-2">12 reviews</div>
+                                        </div>
+                                        <div class="mt-3 font-semibold text-body-2 text-primary-1">Nguyễn Thị Loan</div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <button type="button" class="slick-next absolute z-20 
+                            top-[25%] left-[58%]
+                            md:left-[84%]
+                            xl:left-[88%]
+                            text-[32px] bg-white rounded-full h-12 w-12 twi-12-chevron-right text-primary-1 
+                            shadow-arrow "></button>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="bg-footer bg-cover bg-center bg-no-repeat">
+            <div class="w-full mx-auto xl:max-w-7xl">
+                <div class="md:px-6 w-full px-4 pt-[58px] xl:px-0">
+                    <div class="grid grid-cols-1 gap-[37px] md:gap-12 md:grid-cols-2 xl:grid-cols-4">
+                        <div class="flex flex-col gap-6">
+                            <div class="w-full flex items-center">
+                                <img class="" src ='../img/header-footer/Logo.png'>
+                            </div>
+                            <div class=" text-body-2 text-txt-2">
+                                Chăm sóc răng miệng là duy trì hàm răng khỏe mạnh và làm sạch miệng
+                            </div>
+                            <ul class="grid grid-cols-1 md:gap-3 gap-3.5">
+                                <li class="flex gap-2 items-center text-body-2  text-txt-2"><div class="twi-12-location text-primary-1 text-base"></div> 345 Lê Văn Sỹ, P.13, Q.3</li>
+                                <li class="flex gap-2 items-center text-body-2  text-txt-2"><div class="twi-12-call-1 text-primary-1 text-base"></div>(+84) 901234567</li>
+                                <li class="flex gap-2 items-center text-body-2  text-txt-2"><div class="twi-12-email text-primary-1 text-base"></div>info@dencare.com</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="flex flex-col gap-3 md:pt-[19px]">
+                                <div class=" font-semibold text-txt-1 text-body-1">dencare.com</div>
+                                <hr class="w-[78px] h-1 bg-primary-1 border-0 rounded-lg "> 
+                            </div>
+                            <div class="mt-[19px]">
+                                <ul class="flex flex-col gap-1">
+                                    <li class="  text-body-2 text-txt-2">Giới thiệu</li>
+                                    <li class="  text-body-2 text-txt-2">Dịch vụ</li>
+                                    <li class="  text-body-2 text-txt-2">Quy trình</li>
+                                    <li class="  text-body-2 text-txt-2">Đội ngũ</li>
+                                    <li class="  text-body-2 text-txt-2">Đánh giá khách hàng</li>
+                                </ul>
+                            </div>
+                        </div>
+    
+                        <div>
+                            <div class="flex flex-col gap-3 xl:pt-[19px]">
+                                <div class="font-semibold text-txt-1 text-body-1">Giờ mở cửa</div>
+                                <hr class="w-[78px] h-1 bg-primary-1 border-0 rounded-lg "> 
+                            </div>
+                            <div class="mt-[19px]">
+                                <div class="flex flex-row gap-2">
+                                    <div class="flex flex-col gap-2">
+                                        <div class="text-body-2 text-txt-2">Thứ 2 - Thứ 6 </div>
+                                        <div class="text-body-2 text-txt-2">Thứ 7 </div>
+                                    </div>
+                                    <div class="flex flex-col gap-2">
+                                        <div class="text-body-2 text-primary-1">08:00 - 22:00</div>
+                                        <div class="text-body-2 text-primary-1">08:00 - 18:00</div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        </div>
+                        <div class="md:max-w-[284px] md:max-h-[190px] xl:mt-[19px] aspect-[53%] w-full flex flex-col justify-between gap-[69px] md:gap-[76px] bg-footer-main bg-cover bg-center bg-no-repeat">
+                            <div class="w-full flex">
+                                <div class="mx-3 mt-[15px] md:mt-3 bg-white border-[1px] border-white">
+                                    <a href="#">
+                                        <img class="px-[6px] py-[13px]" src="../img/home/footer-1.png" alt="">
+                                    </a>
+                                </div>
+                                <div class="py-3 ">
+                                    <a href="#">
+                                        <div class=" font-semibold text-white text-body-1">Nha khoa Dencare
+                                            <img class="inline" src="../img/icon/tick-footer.png" alt="">
+                                        </div>
+                                    </a>
+                                    <div class=" text-white text-caption-1">2000 lượt thích</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center mb-3 mx-3">
+                                <a href="#">
+                                    <div class="items-center bg-white border-[1px] border-white rounded-sm">
+                                        <div class=" flex items-center px-2 py-1.5 gap-1">
+                                            <div><img src="../img/icon/facebook icon.png" alt=""></div>
+                                            <div class=" text-black text-caption-1">Thích Trang</div> 
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="xl:mt-[58px] md:mt-[35px] mt-[52px] py-3 text-body-1 font-semibold text-txt-3 text-center">
+                Copyright © 2022 by T-Web. All Rights Reserved
+            </div>
+    
+             <!-- fixed button -->
+             <div class="z-50 flex flex-col fixed gap-8 items-center 
+             bottom-20 right-4 md:bottom-14 md:right-6 xl:bottom-12 xl:right-12">
+                 <button id="scrollTop" class="
+                 hover:opacity-60 transition-all duration-700
+                 shadow-scrollTop
+                 hidden rounded-full p-2.5 bg-black bg-opacity-30 text-icon-about-4 "> <div class="twi-12-sort-arrow-right rotate-[-90deg] text-txt-1"> </div></button>
+                 <div class="flex flex-col gap-5">
+                     <button class="hover:opacity-50 transition-all duration-700
+                     shadow-fixedButton rounded-full p-2.5 bg-primary-1 border border-primary-1"> 
+                         <a href="#">                        
+                             <img src="../img/icon/message.svg" alt="">
+                         </a>
+                     </button>
+                     <button class="hover:opacity-50 transition-all duration-700
+                     shadow-fixedButton rounded-full p-2.5 bg-mess-1 border border-primary-1">
+                         <a href="#">
+                             <img src="../img/icon/messenger.svg" alt="">
+                         </a>
+                     </button>
+                     <button class="hover:opacity-50 transition-all duration-700
+                     shadow-fixedButton rounded-full p-2.5 bg-mess-2 border border-primary-1">
+                         <a href="#">
+                             <img src="../img/icon/zalo.png" alt="">
+                         </a>
+                     </button>
+                 </div>
+            </div>
+    
+        </footer>
+    </body>
+</html>
